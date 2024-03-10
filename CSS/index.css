@@ -1,0 +1,45 @@
+/* How to use flex?
+Dr Hamdani University of Tissemsilt */
+body {
+  margin: 0 0 2px 0px;
+}
+
+.page {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  margin: 0.2em;
+}
+
+.artcl {
+  order: 2;
+  width: 70%;
+}
+
+.artcl .headerArtcl {
+  background-color: rgba(6, 29, 233, 0.884);
+  text-align: center;
+}
+
+.artcl p {
+  text-indent: 10px;
+  text-align: justify;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+
+  gap: 0.2em;
+}
+
+.footer-ftr1 {
+  width: 20%;
+  background-color: rgb(231, 250, 234);
+}
+
+.footer-ftr2 {
+  width: 79%;
+  text-align: justify;
+  background-color: rgb(231, 250, 234);
+}

@@ -1,0 +1,23 @@
+/* How to use flex?
+Dr Hamdani University of Tissemsilt */
+.headerUniv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(196, 245, 228);
+  }
+  .leftLogo {
+    order: 1;
+  }
+  .textlogo {
+    order: 2;
+  }
+  .rightLogo {
+    order: 3;
+  }
+  
+  .headerUniv img {
+    height: 100px;
+    width: 100px;
+  }

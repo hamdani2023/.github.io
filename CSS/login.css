@@ -1,0 +1,30 @@
+/* How to use flex?
+Dr Hamdani University of Tissemsilt */
+body {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  background-color: lightgrey;
+}
+
+fieldset {
+  padding: 10px 10px 0 15px;
+  width: fit-content;
+  background-color: rgb(202, 243, 229);
+  border-radius: 10px;
+  border: 1px solid blue;
+  box-shadow: 10px 10px 8px 10px #888888;
+}
+
+.form-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  width: 100px;
+}
