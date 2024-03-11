@@ -1,12 +1,13 @@
 /* How to use flex?
 Dr Hamdani University of Tissemsilt */
-body h1,
+body, h1,
 h2,
 h3,
 h4,
 h5 {
-  display: flex;
-}
+  margin: 0;
+  
+ }
 .headerPage {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
@@ -15,14 +16,16 @@ h5 {
   justify-items: center;
   text-align: center;
   background-color: rgb(200, 250, 250);
+  padding: 10px;
 }
 .headerPage img {
   width: 100px;
+  height: 100px;
 }
 
 .navBar {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   height: 40px;
   background-color: #5957f1;
   align-items: center;
@@ -50,9 +53,34 @@ h5 {
 .leftBar {
   display: flex;
   flex-direction: column;
-  justify-content: baseline;
+  justify-content: start;
   background-color: #4d5efa52;
   line-height: 2;
+  gap: 5%;
+  padding: 10px;
+  
+}
+
+.leftBar a{
+  text-decoration: none;
+  
+  
+   
+}
+
+.leftBar h3{
+  margin: 0;
+  padding: 0;
+}
+
+.leftBar .authot{
+  color: darkblue;
+  align-self: center;
+  justify-self: end;
+  margin-top: 25px;
+  text-align: center;
+ 
+
 }
 
 .rightBar {
@@ -68,5 +96,36 @@ h5 {
 
 .footer {
   background-color: #4d5efa52;
-  height: 60px;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  line-height: 1.5;
+  padding: 10px;
+   
+   
+  
+}
+
+.footer .links{
+  display: grid
+  ;
+  grid-template-columns: 1fr 1fr ;
+  
+   
+ 
+   
+}
+
+.footer .links a{
+  text-decoration: none;
+  grid-column: 2;
+  margin-left: 1em;
+   
+}
+
+.footer .links h3{
+  grid-column: 1;
+  grid-row: 1/4;
+  align-self: start;
+  justify-self: end;
 }
