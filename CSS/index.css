@@ -9,19 +9,19 @@ h5 {
   margin: 0;
 }
 .headerPage {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  justify-items: center;
+  display: flex;
+    align-content: center; 
   align-items: center;
-  justify-items: center;
+  justify-content: space-around;
   text-align: center;
   background-color: rgb(200, 250, 250);
 
   padding: 10px;
 }
 .headerPage img {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  
 }
 .titlePage {
   display: flex;
@@ -39,7 +39,7 @@ h5 {
   height: 40px;
 
   align-items: center;
-  background-color: rgba(252, 63, 63, 0.736);
+  background-color:#5957f1;
 }
 .navBar a {
   text-decoration: none;
@@ -116,8 +116,8 @@ h5 {
 }
 
 .footer {
-  background-color: #5957f1;;
-  height: 2%;
+  background-color:#5957f1;
+   
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   line-height: 1.5;
@@ -145,4 +145,8 @@ h5 {
   justify-self: center;
   align-self: center;
   color: rgb(165, 42, 42);
+}
+.footer a {
+  text-decoration: none;
+  color: white;
 }
