@@ -39,7 +39,7 @@ h5 {
   height: 40px;
 
   align-items: center;
-  background-color: rgba(252, 63, 63, 0.671);
+  background-color: rgba(252, 63, 63, 0.736);
 }
 .navBar a {
   text-decoration: none;
@@ -55,7 +55,7 @@ h5 {
 .content {
   background-color: #f2f7f7;
   text-align: justify;
-  padding: 10px;
+  padding: 2px;
   line-height: 1.3;
 }
 .content p {
@@ -75,7 +75,7 @@ h5 {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  background-color: #4d5efa52;
+  background-color: white;
   line-height: 2;
   gap: 15px;
   padding: 10px;
@@ -116,12 +116,12 @@ h5 {
 }
 
 .footer {
-  background-color: #4d5efa52;
-  height: auto;
+  background-color: #5957f1;;
+  height: 2%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   line-height: 1.5;
-  padding: 10px;
+  padding: 5px;
 }
 
 .footer .links {
@@ -135,6 +135,9 @@ h5 {
   margin-left: 1em;
 }
 
+.footer ul {
+  margin: 0;
+}
 .footer .links h3 {
   grid-column: 1;
   grid-row: 1/3;

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom PDF Preview with PDF.js</title>
+    <!-- Include PDF.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+    <style>
+        #pdfViewer {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+        canvas {
+            display: block;
+            margin: 0 auto;
+        }
+        #navButtons {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pdfViewer">
+        <canvas id="pdfCanvas"></canvas>
+        <div id="navButtons">
+            <button id="prevPage">Previous Page</button>
+            <button id="nextPage">Next Page</button>
+        </div>
+    </div>
+
+    <script>
+        // Specify the URL of the PDF file
+        const pdfUrl = 'OOP/OOP Java.pdf';
+        let currentPage = 1;
+        let pdfDoc = null;
+
+        // Specify container element for PDF viewer
+        const container = document.getElementById('pdfViewer');
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Initialize PDF.js viewer
+        pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+            pdfDoc = pdf;
+            renderPage(currentPage);
+        });
+
+        function renderPage(pageNumber) {
+            pdfDoc.getPage(pageNumber).then(function(page) {
+                const viewport = page.getViewport({ scale: 1 });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                page.render(renderContext);
+            });
+        }
+
+        document.getElementById('prevPage').addEventListener('click', function() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage(currentPage);
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', function() {
+            if (currentPage < pdfDoc.numPages) {
+                currentPage++;
+                renderPage(currentPage);
+            }
+        });
+    </script>
+</body>
+</html>
