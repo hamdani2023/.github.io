@@ -1,152 +1,194 @@
-/* How to use flex?
-Dr Hamdani University of Tissemsilt */
-body,
-h1,
-h2,
-h3,
-h4,
-h5 {
+body {
   margin: 0;
+  font-family: "Merriweather", serif;
+  background-color: #eef1f5; /* Light and fresh background */
+  color: #333;
+  line-height: 1.6;
 }
-.headerPage {
-  display: flex;
-    align-content: center; 
-  align-items: center;
-  justify-content: space-around;
-  text-align: center;
-  background-color: rgb(200, 250, 250);
 
-  padding: 10px;
-}
-.headerPage img {
-  width: 80px;
-  height: 80px;
-  
-}
-.titlePage {
+.headerPage {
+  background-color: #003459; /* Deep navy blue for a strong header presence */
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
-  justify-items: center;
-  text-align: center;
-  background-color: #5957f1;
-  padding: 1em;
-  gap: 1em;
+  align-items: center;
+  padding: 20px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.headerPage img {
+  width: 100px;
+  transition: transform 0.3s ease;
+}
+
+.headerPage img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.headerPage h4 {
+  color: #f0f0f0; /* Soft white for contrast */
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+
+.title {
+  background-color: #007ea7; /* A vibrant shade of teal */
+  text-align: center;
+  padding: 30px;
+  color: #ffffff;
+}
+
+.title h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+.title h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
 .navBar {
+  background-color: #00a8e8; /* Bright blue to catch the eye */
   display: flex;
   justify-content: space-evenly;
-  height: 40px;
-
-  align-items: center;
-  background-color:#5957f1;
+  padding: 15px 0;
 }
+
 .navBar a {
+  color: #ffffff;
   text-decoration: none;
-  color: white;
-  font-size: large;
+  font-size: 1.3em;
+  transition: background-color 0.3s ease;
 }
 
-.grid-page {
+.navBar a:hover {
+  background-color: #007ea7; /* Teal background on hover */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.page {
   display: grid;
-  grid-template-columns: 1fr 3fr;
-  justify-items: stretch;
-}
-.content {
-  background-color: #f2f7f7;
-  text-align: justify;
-  padding: 2px;
-  line-height: 1.3;
-}
-.content p {
-  text-indent: 10px;
-}
-
-.content h3 {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  color: rgb(185, 16, 16);
-  font-weight: bold;
-  text-decoration: underline;
-}
-.leftBar {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  background-color: white;
-  line-height: 2;
+  grid-template-columns: 1fr 2fr;
   gap: 15px;
   padding: 10px;
-  margin: 0;
 }
 
-.leftBar a {
+.leftBar h2 {
+  background-color: #007ea7; /* A vibrant shade of teal */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.rightBar,
+.leftBar,
+.content {
+  background-color: #f8f9fa; /* A softer off-white background for a more refined look */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for more depth */
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(
+    to top left,
+    #e3f2fd,
+    #ffffff
+  ); /* Subtle gradient from light blue to white */
+}
+
+.rightBar:hover,
+.leftBar:hover,
+.content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect on hover for more dynamic interaction */
+}
+
+.rightBar:hover,
+.leftBar:hover,
+.content:hover {
+  transform: scale(1.03); /* Subtle growth effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Increased shadow for dynamic effect */
+}
+
+/* Additional styling for titles within these elements to make them stand out */
+.rightBar h3,
+.leftBar h3,
+.content h3 {
+  font-size: 1.25em;
+  color: #0056b3; /* Deep blue for a pop of color */
+  background-color: #e8f0fe; /* Light blue background for contrast */
+  padding: 10px;
+  border-radius: 8px; /* Soft rounded edges for a smoother look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.rightBar a,
+.leftBar a,
+.content a {
+  color: #00a8e8; /* Bright blue links for contrast */
   text-decoration: none;
 }
 
-.leftBar ul {
-  margin-top: 0;
+.rightBar a:hover,
+.leftBar a:hover,
+.content a:hover {
+  color: #afcad3; /* Teal on hover */
+  font-size: 1.3em;
+  transition: background-color 0.3s ease;
+  background-color: #007ea7; /* Teal background on hover */
+  padding: 10px;
 }
 
-.leftBar h3 {
-  margin: 0;
-  padding: 5px;
+.content p {
+  text-align: justify;
+  text-indent: 20px;
 }
 
-.leftBar .author {
-  color: darkblue;
-  align-self: center;
-  justify-self: end;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.rightBar {
-  display: flex;
-  padding-top: 5em;
-  justify-content: start;
-  align-items: center;
-  color: red;
-  text-orientation: vertical-lr;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
+.content h2 {
+  background-color: #007ea7; /* A vibrant shade of teal */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .footer {
-  background-color:#5957f1;
-   
+  background-color: #003459;
+  color: #ffffff;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  line-height: 1.5;
-  padding: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+  gap: 20px;
 }
 
-.footer .links {
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-
-.footer .links a {
-  text-decoration: none;
-  grid-column: 2;
-  margin-left: 1em;
-}
-
-.footer ul {
-  margin: 0;
-}
-.footer .links h3 {
-  grid-column: 1;
-  grid-row: 1/3;
-
-  justify-self: center;
-  align-self: center;
-  color: rgb(165, 42, 42);
-}
 .footer a {
+  color: #00a8e8; /* Bright blue links for contrast */
   text-decoration: none;
+}
+
+.footer a:hover {
+  color: #afcad3; /* Teal on hover */
+  font-size: 1.3em;
+  transition: background-color 0.3s ease;
+  background-color: #007ea7; /* Teal background on hover */
+  padding: 10px;
+}
+
+h2 {
+  background-color: #023e8a; /* Navy blue */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+}
+h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.leftBar h2,
+.rightBar h2 {
+  background-color: #007ea7; /* Teal background on hover */
   color: white;
+  padding: 10px;
+  border-radius: 5px;
 }

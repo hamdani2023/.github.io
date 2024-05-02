@@ -12,27 +12,22 @@ Dr Hamdani University of Tissemsilt -->
     <link href="CSS/navBar.css" rel="stylesheet" />
 
     <link href="CSS/sideBar.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <style>
-      .content {
-        background-color: rgba(255, 255, 0, 0.014);
-      }
-      .rightBar {
-        background-color: rgba(64, 238, 48, 0.192);
-      }
-    </style>
+     
     <script src="src/header.js"></script>
 
-    <div class="grid-page">
+    <div class="page">
       <div class="leftBar">
-        <div class="author">
+        
           <h3>
-            Lecturer : <br />
-            Dr. HAMDANI MUSTAPHA
-          </h3>
-        </div>
+            Lecturer </h3>
+          <ul>  <li> Dr. HAMDANI MUSTAPHA</li></ul>
+          
+       
         <div>
           <h3>Download : Web Developement</h3>
           <ul>
@@ -102,7 +97,7 @@ Dr Hamdani University of Tissemsilt -->
               <a
                 href="https://github.com/hamdani2023/phpNumberStringCasting"
                 target="_blank"
-                >PHP: Numbers-String -Casting</a
+                >PHP: Numbers, String, Casting</a
               >
             </li>
 
@@ -126,21 +121,12 @@ Dr Hamdani University of Tissemsilt -->
           </ul>
         </div>
       </div>
-
-      <div class="content">
-       
-         
-          <object 
-          data="DevWeb/Web Dev.pdf" 
-          type="application/pdf" 
-          width="100%" 
-          height="100%">
-      <!-- Fallback content in case the browser does not support embedded PDFs -->
-      <a href="DevWeb/Web Dev.pdf">Download PDF</a>
-  </object>
-</div>
-      <!-- <div class="rightBar"><h3>Site under construction</h3></div>
-    </div> -->
+      <div id="content-placeholder" class="content">
+      </div>
+      
+        <script src="src/canevasWebDev.js"></script>
+  
+     
 
     <script src="src/footer.js"></script>
   </body>
