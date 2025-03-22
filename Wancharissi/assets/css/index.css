@@ -1,0 +1,425 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove this rule as it causes issues with scrollbars */
+/* * {
+  max-width: 100vw;
+  overflow-x: hidden;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/cairo/Cairo-Regular.ttf") format("truetype"),
+    url("../fonts/cairo/Cairo-Regular.woff") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/cairo/Cairo-Bold.ttf") format("truetype"),
+    url("../fonts/cairo/Cairo-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  color: #333;
+  direction: rtl;
+  background-color: #f0f4f8; /* Softer background */
+  line-height: 1.6;
+  overflow-x: hidden; /* Apply overflow-x: hidden to body instead of * */
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/cairo/Cairo-Regular.ttf") format("truetype"),
+    url("../fonts/cairo/Cairo-Regular.woff") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../fonts/cairo/Cairo-Bold.ttf") format("truetype"),
+    url("../fonts/cairo/Cairo-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  color: #333;
+  direction: rtl;
+  background-color: #f0f4f8; /* Softer background */
+  line-height: 1.6;
+}
+/* Grid container */
+.grdHd {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  align-items: center;
+  gap: 2rem 1rem; /* Reduced left gap */
+  padding: 1.2rem;
+  background-color: #f8f9fa; /* Modern light background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  transition: all 0.3s ease-in-out;
+}
+.grdHd .facLab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem; /* Reduced left padding */
+  color: #37474f;
+  text-align: center;
+  user-select: none;
+  position: relative;
+  background: linear-gradient(180deg, #91bee2, #c6d6e6, #ffffff);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  gap: 12px;
+}
+
+.grdHd .facLab:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    180deg,
+    #7faecf,
+    #b0c4d8,
+    #ffffff
+  ); /* Slightly darker sky effect */
+}
+
+/* ✨ Improved Text Readability */
+.grdHd .facLab h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #212121; /* Darker for better contrast */
+}
+
+/* ✨ Image Styling */
+.grdHd .facLab img {
+  width: 120px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 2px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* Softer shadow */
+}
+
+/* ✨ Image Hover */
+.grdHd .facLab img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grdHd {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .grdHd .facLab {
+    padding: 2rem 1.5rem;
+  }
+
+  .grdHd .facLab img {
+    width: 100px;
+  }
+}
+
+/* Headings and Text */
+.grdHd .facLab h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #263238;
+}
+
+.grdHd .facLab p {
+  font-size: 1rem;
+  color: #546e7a;
+  line-height: 1.6;
+}
+
+/* Smooth transition for facLab */
+.grdHd .facLab {
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.grdHd .imgHead img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Background image section */
+.bck-img {
+  margin: 10px;
+  padding: 20px;
+  background-image: url("../img/logos/wch001.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  min-height: 60vh;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.bck-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Darker overlay */
+  z-index: 1;
+}
+
+.bck-img > * {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.bck-img {
+  animation: zoomIn 12s infinite alternate ease-in-out;
+}
+
+/* Title section */
+.title {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 3rem 4rem;
+  text-align: center;
+  margin: 2rem auto;
+  border-radius: 16px;
+  min-width: 80vw;
+  max-width: 1200px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(10px); /* Glassmorphism */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.title h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  animation: float 5s infinite ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.title:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Container for links */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  margin: 30px auto;
+  width: 80%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+}
+
+.container a {
+  display: block;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: rgb(1, 1, 65);
+}
+
+.container a:hover {
+  background: rgba(212, 92, 92, 0.9);
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background-color: #003459;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between; /* Space around items */
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  padding: 20px;
+  direction: rtl; /* Arabic-friendly direction */
+  overflow: auto; /* Allow scrolling */
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+}
+/* Hide scrollbar in Chrome, Safari, and Opera */
+.footer::-webkit-scrollbar {
+  display: none;
+}
+.footer ul {
+  padding: 0;
+  margin: 0;
+  width: auto;
+  list-style-position: inside; /* Ensures bullets appear inside the padding */
+}
+
+.footer h3 {
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer li {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  padding-inline-start: 20px; /* Works well with RTL for indentation */
+  position: relative;
+}
+
+.footer li::before {
+  position: absolute;
+  right: 0; /* Align with RTL */
+  font-size: 1.2em;
+}
+
+.footer a {
+  color: #00a8e8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #afcad3;
+  background-color: #007ea7;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.05em;
+}
+
+.footer-email h3 {
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  color: #00c8ff; /* Bright cyan title */
+}
+
+.footer-email ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-email li {
+  color: #d1e8f2;
+  margin-bottom: 8px;
+}
+
+/* Email link styling */
+.footer-email a {
+  color: #00a8e8; /* Light greenish blue */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-email a:hover {
+  color: #002744; /* Dark blue on hover */
+  background-color: #003cff; /* Highlight background */
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+.design {
+  list-style: none;
+  padding: 20px;
+  background-color: #002744; /* Darker shade to distinguish the block */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.design h3 {
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  color: #00c8ff; /* Bright cyan to stand out */
+}
+
+.design ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+
+.design li {
+  padding-right: 28px; /* Indent for RTL */
+  color: #d1e8f2; /* Soft light blue for contrast */
+  position: relative;
+}
+
+/* Optional: custom bullet */
+.design li::before {
+  position: absolute;
+  right: 0;
+  color: #ffcc00; /* Gold accent */
+}
+/* Hover effect on individual list items */
+.design :hover {
+  color: #002744; /* Dark blue text */
+  background-color: #00c8ff; /* Cyan background */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+a.disabled {
+  color: #d5d2d2; /* Gray color to indicate disabled */
+  pointer-events: none; /* Disable click events */
+  cursor: default; /* Change cursor to default arrow */
+  text-decoration: none; /* Remove underline */
+}

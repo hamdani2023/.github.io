@@ -1,0 +1,564 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove this rule as it causes issues with scrollbars */
+/* * {
+  max-width: 100vw;
+  overflow-x: hidden;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../../../../assets/fonts/cairo/Cairo-Regular.ttf")
+      format("truetype"),
+    url("../../../../assets/fonts/cairo/Cairo-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../../../../assets/fonts/cairo/Cairo-Bold.ttf") format("truetype"),
+    url("../../../../assets/fonts/cairo/Cairo-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Cairo", arial;
+  background-color: #eef1f5;
+  color: #333;
+  line-height: 1.8;
+}
+img {
+  width: 50%; /* Adjust size */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center image */
+}
+.ministry {
+  display: flex;
+  background-color: #0059048c;
+  justify-content: center;
+  text-align: center;
+}
+
+.ministry h4 {
+  color: #860b0b;
+  margin: 0 15px;
+  font-size: 1.2em;
+} /* Modern and Beautiful Design for grdHeader and Header */
+.grdHeader {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: linear-gradient(to top left, #e3f2fd, #ffffff);
+  overflow: hidden;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4); /* Enhanced shadow */
+  border-radius: 8px; /* Smoothened edges */
+  transition: all 0.3s ease-in-out;
+  gap: 10px; /* Increased for a better visual gap */
+  padding: 5px; /* Added slight padding for smooth spacing */
+  margin: 5px;
+}
+
+.grdHeader > .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  color: #263238;
+  letter-spacing: 0.8px;
+  text-align: center;
+  user-select: none;
+  position: relative;
+  box-shadow: inset 0 -5px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease,
+    background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600;
+  border-radius: 8px; /* Smoothened corners */
+}
+
+.grdHeader > .header:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+  filter: brightness(1.2);
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #000000;
+  transform: scale(1.06);
+}
+
+.grdHeader > .header:active {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+  filter: brightness(0.9);
+  transform: scale(0.98);
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .grdHeader {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .grdHeader > .header {
+    padding: 2rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grdHeader > .header {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.header {
+  background: linear-gradient(to top left, #e3f2fd, #ffffff);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8rem 2.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Slightly darker */
+  text-align: center;
+  border-radius: 12px;
+}
+
+.header img {
+  width: 90px;
+  transition: transform 0.25s ease, filter 0.3s ease;
+}
+
+.header img:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.header h4 {
+  color: #263238;
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.header:hover h4 {
+  color: #000;
+}
+
+.title {
+  background: linear-gradient(
+    135deg,
+    #007ea7,
+    #005b82
+  ); /* Deep modern blue gradient */
+  text-align: center;
+  padding: 40px 25px; /* Increased padding for spaciousness */
+  color: #ff6e40; /* Modern warm coral */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  margin-bottom: 35px; /* Increased margin */
+  animation: fadeInTitle 1s ease-out; /* Smoother animation */
+  position: relative;
+  overflow: hidden;
+  /* Slightly more rounded corners */
+  transition: transform 0.35s ease-in-out, box-shadow 0.35s ease-in-out; /* Smoother transitions */
+  border-radius: 8px;
+  margin: 5px;
+}
+
+/* Dynamic Depth Overlay */
+.title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15),
+    rgba(0, 0, 0, 0.25)
+  ); /* Radial gradient for a dynamic overlay */
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+/* Main Title Styling */
+.title h1 {
+  font-size: 2.1em; /* Increased size for impact */
+  font-weight: 900; /* Boldest weight */
+  margin: 0;
+  letter-spacing: 2px; /* Increased letter spacing */
+  color: #ffffff; /* Pure white for maximum contrast */
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); /* Enhanced text shadow */
+  transition: transform 0.35s ease, text-shadow 0.35s ease, color 0.35s ease;
+}
+
+.title h1:hover {
+  transform: scale(1.08); /* More pronounced scale */
+  text-shadow: 5px 5px 14px rgba(0, 0, 0, 0.6); /* Even stronger shadow */
+  color: #ffeb3b; /* Bright yellow highlight */
+}
+
+/* Subtitle Styling */
+.title h2 {
+  font-size: 1.8em; /* Further increased subtitle size */
+  font-weight: 600; /* Increased subtitle weight */
+  margin: 18px auto 0; /* Increased margin */
+  letter-spacing: 1.2px; /* Increased letter spacing */
+  text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4); /* Enhanced subtitle shadow */
+  transition: transform 0.35s ease, color 0.35s ease, text-shadow 0.35s ease;
+  max-width: 60%; /* Increased max width */
+  text-align: center;
+}
+
+.title h2:hover {
+  transform: scale(1.07); /* More pronounced scale */
+  color: #ff8a80; /* Light red hover color */
+  text-shadow: 4px 4px 9px rgba(0, 0, 0, 0.5); /* Stronger hover shadow */
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-40px); /* Increased animation distance */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced Glow Effect on Hover */
+.title:hover {
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.4); /* More pronounced hover shadow */
+  transform: translateY(-5px); /* Increased hover lift */
+}
+
+.navBar {
+  background: linear-gradient(135deg, #00a8e8, #007ea7);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 18px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  margin: 5px;
+}
+
+.navBar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 500;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.navBar a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navBar a:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.rightBar,
+.leftBar,
+.content {
+  background: linear-gradient(to top left, #e3f2fd, #ffffff);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rightBar:hover,
+.leftBar:hover,
+.content:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.rightBar h2,
+.leftBar h2,
+.content h2 {
+  font-size: 1.25em;
+  color: #0056b3;
+  background-color: #e8f0fe;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.rightBar h4,
+.leftBar h4 {
+  color: #0056b3;
+  margin-right: 10px;
+}
+
+.content p {
+  text-align: justify;
+  text-indent: 24px;
+  line-height: 1.8;
+  font-size: 1.1em;
+  margin: 16px 0;
+  padding: 0 10px;
+  color: #333333;
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+
+  padding: 12px 16px;
+}
+.content .chapter h4,
+.content .chapter p {
+  display: inline;
+  line-height: 2.5;
+  text-align: justify;
+  word-spacing: 1px;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+}
+
+ul ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 15px 25px;
+  padding-left: 30px;
+  background: linear-gradient(135deg, #f0faff, #e0f0ff);
+  box-shadow: 0 4px 12px rgba(0, 126, 167, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.rightBar li,
+.leftBar li,
+.content li {
+  text-align: justify;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  background-color: #023e8a;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 0;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.leftBar h2,
+.rightBar h2 {
+  background-color: #007ea7;
+  color: white;
+}
+
+.email-contact {
+  color: #4a1f1f; /* Deeper, elegant mahogany for improved readability */
+  font-size: 1.15em;
+  font-weight: 400;
+  padding: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #fdfdfd,
+    #f3e7e7
+  ); /* Subtle, airy gradient with soft warmth */
+  border: 1px solid #6edb74; /* Softer, fresh green to avoid harshness */
+  border-radius: 18px;
+  max-width: 560px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  letter-spacing: 0.8px;
+  line-height: 1.9;
+  transition: background 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+  backdrop-filter: blur(6px);
+  margin: auto;
+}
+
+.email-contact:hover {
+  background: linear-gradient(
+    135deg,
+    #f9eaea,
+    #f4d4d4
+  ); /* Smooth, pastel hover effect */
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px) scale(1.02);
+}
+
+.email-contact a {
+  color: #0077aa; /* Calm, inviting blue */
+  text-decoration: none;
+  font-weight: 600;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease, text-shadow 0.3s ease;
+}
+
+.email-contact a:hover {
+  color: #005070; /* Deeper teal for hover */
+  border-bottom: 2px solid #005070;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+  background-color: #003459;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between; /* Space around items */
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  padding: 20px;
+  direction: rtl; /* Arabic-friendly direction */
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+  width: auto;
+  list-style-position: inside; /* Ensures bullets appear inside the padding */
+}
+
+.footer h3 {
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+.footer li {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  padding-inline-start: 20px; /* Works well with RTL for indentation */
+  position: relative;
+}
+
+.footer li::before {
+  position: absolute;
+  right: 0; /* Align with RTL */
+  font-size: 1.2em;
+}
+
+.footer a {
+  color: #00a8e8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover {
+  color: #afcad3;
+  background-color: #007ea7;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1.05em;
+}
+
+.footer-email h3 {
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  color: #00c8ff; /* Bright cyan title */
+}
+
+.footer-email ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-email li {
+  color: #d1e8f2;
+  margin-bottom: 8px;
+}
+
+/* Email link styling */
+.footer-email a {
+  color: #00a8e8; /* Light greenish blue */
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-email a:hover {
+  color: #002744; /* Dark blue on hover */
+  background-color: #003cff; /* Highlight background */
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+.design {
+  list-style: none;
+  padding: 20px;
+  background-color: #002744; /* Darker shade to distinguish the block */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.design h3 {
+  margin-bottom: 12px;
+  font-size: 1.3em;
+  color: #00c8ff; /* Bright cyan to stand out */
+}
+
+.design ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+
+.design li {
+  padding-right: 28px; /* Indent for RTL */
+  color: #d1e8f2; /* Soft light blue for contrast */
+  position: relative;
+}
+
+/* Optional: custom bullet */
+.design li::before {
+  position: absolute;
+  right: 0;
+  color: #ffcc00; /* Gold accent */
+}
+/* Hover effect on individual list items */
+.design :hover {
+  color: #002744; /* Dark blue text */
+  background-color: #00c8ff; /* Cyan background */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+a.disabled {
+  color: #d5d2d2; /* Gray color to indicate disabled */
+  pointer-events: none; /* Disable click events */
+  cursor: default; /* Change cursor to default arrow */
+  text-decoration: none; /* Remove underline */
+}

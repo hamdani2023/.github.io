@@ -1,0 +1,501 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove this rule as it causes issues with scrollbars */
+/* * {
+  max-width: 100vw;
+  overflow-x: hidden;
+} */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../../../../assets/fonts/cairo/Cairo-Regular.ttf")
+      format("truetype"),
+    url("../../../../assets/fonts/cairo/Cairo-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cairo";
+  src: url("../../../../assets/fonts/cairo/Cairo-Bold.ttf") format("truetype"),
+    url("../../../../assets/fonts/cairo/Cairo-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  font-family: "Cairo", arial;
+  background-color: #eef1f5;
+  color: #333;
+  line-height: 1.8;
+}
+
+.header {
+  background-color: #003459; /* Deep navy blue for a strong header presence */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-justify: center;
+  padding: 20px 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.header div {
+  text-align: center;
+}
+.header img {
+  width: 100px;
+  transition: transform 0.3s ease;
+}
+
+.header img:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+.header h4 {
+  color: #f0f0f0; /* Soft white for contrast */
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+
+/* Grid container */
+.grdHd {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  align-items: center;
+  gap: 2rem 1rem; /* Reduced left gap */
+  padding: 1.2rem;
+  background-color: #f8f9fa; /* Modern light background */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+  transition: all 0.3s ease-in-out;
+}
+.grdHd .facLab {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem; /* Reduced left padding */
+  color: #37474f;
+  text-align: center;
+  user-select: none;
+  position: relative;
+  background: linear-gradient(180deg, #91bee2, #c6d6e6, #ffffff);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  gap: 12px;
+}
+
+.grdHd .facLab:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    180deg,
+    #7faecf,
+    #b0c4d8,
+    #ffffff
+  ); /* Slightly darker sky effect */
+}
+
+/* ✨ Improved Text Readability */
+.grdHd .facLab h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #212121; /* Darker for better contrast */
+}
+
+/* ✨ Image Styling */
+.grdHd .facLab img {
+  width: 120px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 2px;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12); /* Softer shadow */
+}
+
+/* ✨ Image Hover */
+.grdHd .facLab img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grdHd {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .grdHd .facLab {
+    padding: 2rem 1.5rem;
+  }
+
+  .grdHd .facLab img {
+    width: 100px;
+  }
+}
+
+/* Headings and Text */
+.grdHd .facLab h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #263238;
+}
+
+.grdHd .facLab p {
+  font-size: 1rem;
+  color: #546e7a;
+  line-height: 1.6;
+}
+
+/* Smooth transition for facLab */
+.grdHd .facLab {
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.grdHd .imgHead img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.title {
+  background-color: #007ea7; /* A vibrant shade of teal */
+  text-align: center;
+  padding: 10px;
+  color: #ffffff;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.title h1 {
+  font-size: 2.2em;
+  font-weight: 600;
+}
+
+.title h2 {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.navBar {
+  /*background-color: #00a8e8;  Bright blue to catch the eye */
+  background-color: #003459;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  margin: 5px;
+}
+
+.navBar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.3em;
+  transition: background-color 0.3s ease;
+}
+
+.navBar a:hover {
+  background-color: #007ea7; /* Teal background on hover */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.rightBar,
+.leftBar,
+.content {
+  background-color: #f8f9fa; /* A softer off-white background for a more refined look */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Slightly deeper shadow for more depth */
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(
+    to top left,
+    #e3f2fd,
+    #ffffff
+  ); /* Subtle gradient from light blue to white */
+}
+
+.rightBar:hover,
+.leftBar:hover,
+.content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Enhanced shadow effect on hover for more dynamic interaction */
+}
+
+.rightBar:hover,
+.leftBar:hover,
+.content:hover {
+  transform: scale(1.03); /* Subtle growth effect */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Increased shadow for dynamic effect */
+}
+
+/* Additional styling for titles within these elements to make them stand out */
+.rightBar h2,
+.leftBar h2,
+.content h2 {
+  font-size: 1.25em;
+  color: #0056b3; /* Deep blue for a pop of color */
+  background-color: #e8f0fe; /* Light blue background for contrast */
+  padding: 10px;
+  border-radius: 8px; /* Soft rounded edges for a smoother look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.rightBar h4 {
+  color: #0056b3;
+
+  margin-right: 10px;
+}
+
+.rightBar a {
+  text-decoration: none;
+  font-size: 1.3em;
+  transition: background-color 0.3s ease;
+}
+
+.rightBar a:hover {
+  background-color: #007ea7; /* Teal background on hover */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.content .chapter h4,
+.content .chapter p {
+  display: inline; /* This will make both h4 and p inline elements */
+  /*margin-right: 10px;  Adjust spacing as needed */
+  line-height: 2.5;
+  text-align: justify;
+}
+.content p {
+  text-align: justify;
+  text-indent: 20px;
+}
+.rightBar li,
+.leftBar li,
+.content li {
+  text-align: justify;
+}
+
+.content h2 {
+  background-color: #023e8a; /* Navy blue */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.footer {
+  background-color: #003459;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.footer a {
+  color: #00a8e8; /* Bright blue links for contrast */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #afcad3; /* Teal on hover */
+  font-size: 1.3em;
+  transition: background-color 0.3s ease;
+  background-color: #007ea7; /* Teal background on hover */
+  padding: 10px;
+}
+
+h2 {
+  background-color: #023e8a; /* Navy blue */
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+}
+h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.leftBar h2,
+.rightBar h2 {
+  background-color: #007ea7; /* Teal background on hover */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Optimized and Enhanced CSS */
+
+.under-development {
+  text-align: center;
+  margin: 30px auto; /* Vertical margins and center horizontally */
+  padding: 40px 20px; /* Increased inner padding */
+  width: 60%;
+  max-width: 800px; /* Responsive for larger screens */
+
+  /* Modern Gradient Background with Animation */
+  background: linear-gradient(135deg, #ff4b2b, #ff416c, #ff4b2b);
+  background-size: 300% 300%; /* Smoother animation */
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+  animation: glow 2.5s infinite alternate, gradientShift 6s ease infinite;
+
+  /* Smooth Hover Transition */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect - Interactive Lift */
+.under-development:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Main Heading Style */
+.under-development h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 10px;
+
+  /* Elegant Gradient Text */
+  background: linear-gradient(45deg, #ffd700, #ffcc00, #ffd700);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Glow Effect */
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+
+  /* Animations */
+  animation: pulse 2s infinite, gradientShift 4s ease infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Heading Hover Effect */
+.under-development h2:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtitle Style */
+.under-development p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Decorative Animated Lines */
+.under-development::before,
+.under-development::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), transparent);
+  animation: moveLine 3s linear infinite;
+}
+
+.under-development::before {
+  top: 0;
+}
+
+.under-development::after {
+  bottom: 0;
+  animation-delay: 1.5s; /* Staggered animation */
+}
+
+/* Gradient Overlay for Depth */
+.under-development::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.1)
+  );
+  pointer-events: none; /* Ensure clicks pass through */
+}
+
+/* Keyframes */
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glow Animation */
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 75, 43, 0.8);
+  }
+  to {
+    box-shadow: 0 0 35px rgba(255, 65, 108, 1);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Moving Line Animation */
+@keyframes moveLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
